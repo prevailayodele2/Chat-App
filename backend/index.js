@@ -11,6 +11,8 @@ import mainRoutes from "./routes/MainRoutes.js"
 import path from 'path'
 import multer from 'multer'
 import {fileURLToPath} from 'url';
+import ConversationRoute from "./routes/Conversation.js"
+import MessageRoute from "./routes/Message.js"
 
 
 dotenv.config()
@@ -60,6 +62,8 @@ app.use('/api/main', mainRoutes)
 app.use('/api/users', UserRouter )
 app.use('/api/auth', Auth)
 app.use('/api/posts', PostRoute)
+app.use('/api/messages', MessageRoute)
+app.use('/api/conversations', ConversationRoute)
 
 const port = process.env.PORT || 8800
 app.listen(port, () => {
